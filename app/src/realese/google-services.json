@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "994141516969",
+    "project_id": "displaymusic-a0ef5",
+    "storage_bucket": "displaymusic-a0ef5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994141516969:android:0d51ac60c18559e16da5b8",
+        "android_client_info": {
+          "package_name": "com.example.displaymusic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjvETV1jmpr0LDCIQSCBSMNg3Kzobt7UU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
