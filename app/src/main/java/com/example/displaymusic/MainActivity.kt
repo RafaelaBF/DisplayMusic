@@ -1,8 +1,11 @@
 package com.example.displaymusic
 
+import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
+import android.net.Uri
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import android.widget.ImageButton
@@ -10,6 +13,7 @@ import android.widget.ImageView
 import android.widget.SeekBar
 import androidx.lifecycle.lifecycleScope
 import com.example.displaymusic.databinding.ActivityMainBinding
+import com.example.displaymusic.objects.Musica
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -22,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     private var isPlaying = false
 
     // Lista de músicas
-    private val songs = listOf(R.raw.musica_teste1, R.raw.musica_teste2, R.raw.musica_teste3)
+    private var songs = mutableListOf<Musica>()
     private var currentSongIndex = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,12 +37,27 @@ class MainActivity : AppCompatActivity() {
 
         //setSupportActionBar(binding.toolbar)
 
-        // Inicializa o MediaPlayer com a primeira música
-        mediaPlayer = MediaPlayer.create(this, songs[currentSongIndex])
+        // Carregar músicas do arquivo JSON
+        songs = Musica().jsonForMusica(this)
 
+        // Inicializa o MediaPlayer com a primeira música
+        mediaPlayer = MediaPlayer.create(this, songs[currentSongIndex].musicaArquivo)
 
         // Configura o nome da música
-        binding.songName.text = "Nome da Música: Música ${currentSongIndex + 1}"
+        binding.songName.text = "${songs[currentSongIndex].titulo} - ${songs[currentSongIndex].autor}"
+
+        // Ao carregar a música
+        binding.coverImageView.setImageResource(songs[currentSongIndex].capaArquivo)
+
+        // Perfil do autor
+        binding.authorProfileButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(songs[currentSongIndex].perfilAutor))
+            startActivity(intent)
+
+            mediaPlayer.pause()
+            binding.playButton.setImageResource(R.drawable.baseline_play_circle_64)
+            isPlaying = false
+        }
 
         // Configura o botão de Play/Pause
         binding.playButton.setOnClickListener {
@@ -104,6 +123,15 @@ class MainActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
+        // Mostrar ou esconder a barra de volume ao clicar no ícone
+        binding.volumeIcon.setOnClickListener {
+            if (binding.volumeControl.visibility == View.GONE) {
+                binding.volumeControl.visibility = View.VISIBLE
+            } else {
+                binding.volumeControl.visibility = View.GONE
+            }
+        }
+
         // Listener para detectar o fim da música
         mediaPlayer.setOnCompletionListener {
             resetPlayer(binding.playButton)
@@ -147,11 +175,23 @@ class MainActivity : AppCompatActivity() {
 
     private fun changeSong() {
         mediaPlayer.release() // Libera o MediaPlayer atual
-        mediaPlayer = MediaPlayer.create(this, songs[currentSongIndex])
+        mediaPlayer = MediaPlayer.create(this, songs[currentSongIndex].musicaArquivo)
         mediaPlayer.setOnCompletionListener {
             resetPlayer(binding.playButton)
         }
-        binding.songName.text = "Nome da Música: Música ${currentSongIndex + 1}"
+
+        binding.songName.text = "${songs[currentSongIndex].titulo} - ${songs[currentSongIndex].autor}"
+        binding.coverImageView.setImageResource(songs[currentSongIndex].capaArquivo)
+
+        binding.authorProfileButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(songs[currentSongIndex].perfilAutor))
+            startActivity(intent)
+
+            mediaPlayer.pause()
+            binding.playButton.setImageResource(R.drawable.baseline_play_circle_64)
+            isPlaying = false
+        }
+
         binding.musicSeekBar.max = mediaPlayer.duration
         mediaPlayer.start()
         binding.playButton.setImageResource(R.drawable.baseline_pause_circle_64)
@@ -173,26 +213,4 @@ class MainActivity : AppCompatActivity() {
         // Libera recursos ao destruir a atividade
         mediaPlayer.release()
     }
-
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.menu_main, menu)
-//        return true
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        return when (item.itemId) {
-//            R.id.action_settings -> true
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
-//
-//    override fun onSupportNavigateUp(): Boolean {
-//        val navController = findNavController(R.id.nav_host_fragment_content_main)
-//        return navController.navigateUp(appBarConfiguration)
-//                || super.onSupportNavigateUp()
-//    }
 }

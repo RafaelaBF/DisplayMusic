@@ -14,6 +14,17 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+    <!-- Imagem da capa da música -->
+    <ImageView
+        android:id="@+id/coverImageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/album_cover"
+        android:scaleType="centerCrop"
+        android:layout_above="@id/ll_player"/>
+
     <!-- Botões de controle de mídia -->
     <LinearLayout
         android:id="@+id/ll_player"
@@ -65,6 +76,7 @@
 
     <!-- Controle de volume -->
     <LinearLayout
+        android:id="@+id/ll_volume"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/musicSeekBar"
@@ -81,11 +93,26 @@
             android:layout_marginEnd="8dp"
             android:scaleType="centerInside" />
 
-        <!-- SeekBar para controle de volume -->
+        <!-- SeekBar para controle de volume (inicialmente invisível) -->
         <SeekBar
             android:id="@+id/volumeControl"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:visibility="gone" />
     </LinearLayout>
+
+    <!-- Botão de perfil do autor -->
+    <Button
+        android:id="@+id/authorProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_volume"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/primary"
+        android:text="@string/perfil_autor"
+        android:drawable="@drawable/baseline_person_24"
+        android:drawablePadding="8dp"/>
+
 </RelativeLayout>

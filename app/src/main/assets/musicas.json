@@ -1,0 +1,23 @@
+[
+  {
+    "titulo": "Nightfall / Future Bass Music",
+    "autor": "SoulProdMusic",
+    "perfil_autor": "https://pixabay.com/pt/users/soulprodmusic-30064790/",
+    "capa": "capa_nightfall.png",
+    "musica": "nightfall_future.mp3"
+  },
+  {
+    "titulo": "Night Detective",
+    "autor": "Amaksi",
+    "perfil_autor": "https://pixabay.com/pt/users/amaksi-28332361/",
+    "capa": "capa_night_detective.png",
+    "musica": "night_detective.mp3"
+  },
+  {
+    "titulo": "In Slow Motion",
+    "autor": "Soundbay",
+    "perfil_autor": "https://pixabay.com/pt/users/soundbay-601514/",
+    "capa": "capa_in_slow_motion.png",
+    "musica": "in_slow_motion.mp3"
+  }
+]
