@@ -2,7 +2,7 @@
 
 **Display Music** é um aplicativo de música desenvolvido em Kotlin, projetado para reproduzir faixas de áudio e fornecer uma experiência intuitiva de controle de mídia para o usuário. O aplicativo inclui recursos básicos de reprodução de música, como play, pause, avançar, retroceder, controle de volume dinâmico, e exibição da capa do álbum. Além disso, permite a navegação através de uma lista de músicas e exibe informações sobre o autor da faixa.
 
-## Funcionalidades
+## ⚙️ Funcionalidades
 
 - **Reprodução de Músicas**: Controle completo de reprodução, incluindo play/pause, avançar, retroceder e barra de progresso para navegar pela música.
 - **Controle de Volume**: Controle de volume com ícones dinâmicos que refletem o nível de volume (volume mudo, baixo e alto).
@@ -10,7 +10,7 @@
 - **Informações sobre o Autor**: Botão dedicado para exibir o perfil do autor da música.
 - **Navegação entre Músicas**: Fácil navegação entre músicas, com botões que se desabilitam quando você está na primeira ou última faixa da lista.
 
-## Como Usar
+##  🎧 Como Usar
 
 1. **Adicionar Músicas**: Coloque os arquivos de música no formato `.mp3` na pasta `raw` do projeto.
 2. **JSON de Configuração**: Adicione as informações das músicas no arquivo `musicas.json` localizado na pasta `assets`, seguindo o formato:
@@ -28,9 +28,7 @@
 ## Projeto da Tela ![version](https://img.shields.io/badge/version-2.0-purple)
 <img src="imgsReadme/TelasV2.0.png" width="50%" >
 
----
-
-## Tecnologias Utilizadas 
+## Tecnologias Utilizadas 🌐
 
 ![Kotlin](https://img.shields.io/badge/kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)
 ![Android Studio](https://img.shields.io/badge/android%20studio-346ac1?style=for-the-badge&logo=android%20studio&logoColor=white)
@@ -43,7 +41,6 @@
 
 - 👩🏻‍💻 RAFAELA BEZERRA DE FIGUEIREDO. <a href="https://github.com/RafaelaBF"><img  src="https://img.shields.io/badge/github-%23100000.svg?&style=for-the-badge&logo=github&logoColor=white&link=mailto:https://github.com/RafaelaBF" width="50"></a>
 
----
 > [!IMPORTANT]
 > 
 >[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
