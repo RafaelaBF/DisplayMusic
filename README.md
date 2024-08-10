@@ -1,3 +1,5 @@
+<img src="imgsReadme/logo_display_music-branco.png" alt="Logo" width="150" align="right">
+
 # Display Music (BETA) 🎵 [![version](https://img.shields.io/badge/version-1.1-purple)][2]
 
 **Display Music** é um aplicativo de música desenvolvido em Kotlin, projetado para reproduzir faixas de áudio e fornecer uma experiência intuitiva de controle de mídia para o usuário. O aplicativo inclui recursos básicos de reprodução de música, como play, pause, avançar, retroceder, controle de volume dinâmico, e exibição da capa do álbum. Além disso, permite a navegação através de uma lista de músicas e exibe informações sobre o autor da faixa.
