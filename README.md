@@ -1,4 +1,4 @@
-<img src="imgsReadme/logo_display_music-branco.png" alt="Logo" width="150" align="right">
+<img src="imgsReadme/logo_display_music-branco.png" alt="Logo" width="100" align="right">
 
 # Display Music (BETA) 🎵 [![version](https://img.shields.io/badge/version-1.1-purple)][2]
 
