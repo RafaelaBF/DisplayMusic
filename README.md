@@ -43,16 +43,14 @@
 
 > [!IMPORTANT]
 > 
->[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
-> 
-> ***Nota sobre a Licença***
+> ## Nota sobre a Licença [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges)](./LICENSE)
 >
 > *Este projeto está disponível sob a **Licença MIT**, que permite o uso, cópia, modificação, fusão, publicação, distribuição, sublicenciamento e/ou venda do software, desde que o aviso de copyright acima e esta permissão sejam incluídos em todas as cópias ou partes substanciais do software.*
 >
 > *O software é fornecido "como está", sem garantia de qualquer tipo. Para mais detalhes, consulte a licença completa.*
->
+> 
 > ***<p align="center">Copyright (c) 2024 Rafaela Bezerra de Figueiredo</p>***
->
+> 
 ---
 
 <p align="center">🚧 Repositório em andamento...</p>
