@@ -1,6 +1,17 @@
-# Display Music 🎵 ![version](https://img.shields.io/badge/version-1.1-purple)
+# Display Music (BETA) 🎵 [![version](https://img.shields.io/badge/version-1.1-purple)][2]
 
 **Display Music** é um aplicativo de música desenvolvido em Kotlin, projetado para reproduzir faixas de áudio e fornecer uma experiência intuitiva de controle de mídia para o usuário. O aplicativo inclui recursos básicos de reprodução de música, como play, pause, avançar, retroceder, controle de volume dinâmico, e exibição da capa do álbum. Além disso, permite a navegação através de uma lista de músicas e exibe informações sobre o autor da faixa.
+
+## Como Baixar 📲
+
+Baixar a versão Atual: [![version](https://img.shields.io/badge/version-1.1-purple)][2] ou acesse https://github.com/RafaelaBF/DisplayMusic/releases/tag/1.1
+
+> [!NOTE]
+> Para baixar um APK em um dispositivo Android, siga os passos abaixo:
+>  1. Permitir fontes desconhecidas: Antes de baixar, você precisa permitir a instalação de aplicativos de fontes desconhecidas. Para isso, vá em "Configurações" > "Segurança" > "Instalar aplicativos desconhecidos" e selecione o navegador ou app de onde vai baixar o APK. Ative a opção "Permitir desta fonte".
+>  2. Baixar o APK: Use um navegador de sua escolha e procure o APK desejado em sites confiáveis. Toque no link de download e aguarde até que o arquivo seja baixado para o seu dispositivo.
+>  3. Instalar o APK: Após o download, abra o arquivo APK a partir da notificação de download ou acesse-o na pasta "Downloads" do seu dispositivo. Toque no arquivo para iniciar a instalação e siga as instruções na tela.
+>  4. Finalizar a instalação: Após a instalação, você pode abrir o aplicativo diretamente ou encontrar o ícone na sua lista de apps.
 
 ## ⚙️ Funcionalidades
 
@@ -56,3 +67,4 @@
 <p align="center">🚧 Repositório em andamento...</p>
 
 [1]: https://github.com/RafaelaBF/DisplayMusic/blob/main/LICENSE
+[2]: https://github.com/RafaelaBF/DisplayMusic/releases/tag/1.1
