@@ -8,6 +8,8 @@
     <string name="previous">Previous</string>
     <string name="album_cover">Capa_Album</string>
     <string name="perfil_autor">Perfil do Autor</string>
+    <string name="close">Fechar</string>
+    <string name="add_playlist">Adicionar na Playlist</string>
 
     <string name="lorem_ipsum">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris

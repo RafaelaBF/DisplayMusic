@@ -1,35 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".FirstFragment">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!-- Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary_light"
+        android:elevation="4dp">
+
+        <!-- Botão de fechar -->
+        <ImageButton
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/baseline_close_24"
+            android:contentDescription="@string/close" />
+
+        <!-- Label de nome da Toolbar -->
+        <TextView
+            android:id="@+id/nomeToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:gravity="center"
+            android:text="Nome da Toolbar"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true" />
+
+        <!-- Botão de Adicionar na playlist -->
+        <ImageButton
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingHorizontal="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/baseline_playlist_add_24"
+            android:contentDescription="@string/add_playlist" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <Button
-            android:id="@+id/button_first"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/next"
-            app:layout_constraintBottom_toTopOf="@id/textview_first"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <!-- Imagem da capa da música -->
+        <ImageView
+            android:id="@+id/coverImageView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/album_cover"
+            android:scaleType="centerCrop"
+            android:layout_above="@id/songName"/>
 
+        <!-- Label de nome da música -->
         <TextView
-            android:id="@+id/textview_first"
+            android:id="@+id/songName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_margin="8dp"
+            android:text="Nome da Música"
+            android:textSize="18sp"
+            android:layout_centerHorizontal="true" />
+
+        <!-- Botões de controle de mídia -->
+        <LinearLayout
+            android:id="@+id/ll_player"
+            android:layout_below="@id/songName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Botão de Voltar -->
+            <ImageButton
+                android:id="@+id/prevButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/baseline_skip_previous_64"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="center"
+                android:enabled="false" />
+
+            <!-- Ícone de Play/Pause -->
+            <ImageButton
+                android:id="@+id/playButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_play_circle_64"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+
+            <!-- Botão de Avançar -->
+            <ImageButton
+                android:id="@+id/nextButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/baseline_skip_next_64"
+                android:layout_gravity="center"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginStart="16dp" />
+
+        </LinearLayout>
+
+        <!-- Barra de progresso para avançar/retroceder a música -->
+        <SeekBar
+            android:id="@+id/musicSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_player"
+            android:layout_marginTop="16dp" />
+
+        <!-- Controle de volume -->
+        <LinearLayout
+            android:id="@+id/ll_volume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/musicSeekBar"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Ícone de som -->
+            <ImageView
+                android:id="@+id/volumeIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/baseline_volume_up_24"
+                android:layout_marginEnd="8dp"
+                android:scaleType="centerInside" />
+
+            <!-- SeekBar para controle de volume (inicialmente invisível) -->
+            <SeekBar
+                android:id="@+id/volumeControl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Botão de perfil do autor -->
+        <Button
+            android:id="@+id/authorProfileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/lorem_ipsum"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/button_first" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            android:layout_below="@id/ll_volume"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/primary"
+            android:text="@string/perfil_autor"
+            android:drawable="@drawable/baseline_person_24"
+            android:drawablePadding="8dp"/>
+
+    </RelativeLayout>
+</RelativeLayout>
+
